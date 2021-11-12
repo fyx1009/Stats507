@@ -13,6 +13,6 @@ tail -n 111 STATS507_PS2_Yixuan_Feng_72732756.py
 git status
 git add PS2Q3.py
 git commit -m "PS2Q3.py."
-# Use git ststus, git add and git commit to add PS2Q3.py to the repo.
+#### Use git ststus, git add and git commit to add PS2Q3.py to the repo.
 
 [link](./README.md)
