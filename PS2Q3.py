@@ -109,3 +109,32 @@ df_new.to_pickle('./ohxden.pkl')
 df.shape
 
 df_new.shape
+
+# #### Add gender column.
+
+df1 = df1.loc[:, ['SEQN', 'RIAGENDR', 'RIDAGEYR', 'RIDRETH3', 'DMDEDUC2', 
+        'DMDMARTL', 'RIDSTATR', 'SDMVPSU', 'SDMVSTRA', 'WTMEC2YR', 'WTINT2YR']]
+df2 = df2.loc[:, ['SEQN', 'RIAGENDR', 'RIDAGEYR', 'RIDRETH3', 'DMDEDUC2', 
+        'DMDMARTL', 'RIDSTATR', 'SDMVPSU', 'SDMVSTRA', 'WTMEC2YR', 'WTINT2YR']]
+df3 = df3.loc[:, ['SEQN', 'RIAGENDR', 'RIDAGEYR', 'RIDRETH3', 'DMDEDUC2', 
+        'DMDMARTL', 'RIDSTATR', 'SDMVPSU', 'SDMVSTRA', 'WTMEC2YR', 'WTINT2YR']]
+df4 = df4.loc[:, ['SEQN', 'RIAGENDR', 'RIDAGEYR', 'RIDRETH3', 'DMDEDUC2', 
+        'DMDMARTL', 'RIDSTATR', 'SDMVPSU', 'SDMVSTRA', 'WTMEC2YR', 'WTINT2YR']]
+
+for i in (df1, df2, df3, df4):
+    i.columns = ['unique_ids', 'gender', 'age', 'race&ethnicity', 'education', 
+                   'marital_status', 'exam_status', 
+                   'masked_variance_unit_pseudo_PSU_variable', 
+                   'masked_variance_unit_pseudo_stratum_variable', 
+                   'interviewed&mec_examined_participants', 
+                   'interviewed_participants']
+df1['cohort'] = 2011
+df2['cohort'] = 2013
+df3['cohort'] = 2015
+df4['cohort'] = 2017
+
+df_a = df1.append(df2)
+df_a = df_a.append(df3)
+df_a = df_a.append(df4)
+df_a.loc[df_a['gender'] == 1, 'gender'] = "Male"
+df_a.loc[df_a['gender'] == 2, 'gender'] = "Female"
