@@ -49,4 +49,4 @@ df.cumsum()
 df['cumsum_2'] = df[['group', 'value_2']].groupby('group').cumsum() 
 df
 
-# [link](./pandas_notes/pd_topic_fengyx.py)
+# [link](https://github.com/fyx1009/Stats507/blob/main/pandas_notes/pd_topic_fengyx.py)
