@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # -*- coding: utf-8 -*-
 # ---
 # jupyter:
@@ -48,3 +49,6 @@ df.cumsum()
 
 df['cumsum_2'] = df[['group', 'value_2']].groupby('group').cumsum() 
 df 
+=======
+# Stats507
+>>>>>>> 4d20f10fce57e17fe17867d53eff3bc74c7ebc23
